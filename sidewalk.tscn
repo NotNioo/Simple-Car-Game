@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dgecl37ros0vb"]
+
+[ext_resource type="Texture2D" uid="uid://b5btrnyrqofct" path="res://Tiles/SideWalk1.png" id="2_e0an3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrivr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(32.5, 65)
+
+[node name="sidewalk" type="Node2D" unique_id=1210498739]
+
+[node name="sidewalk" type="StaticBody2D" parent="." unique_id=304712497]
+physics_material_override = SubResource("PhysicsMaterial_xrivr")
+
+[node name="Sprite2D" type="Sprite2D" parent="sidewalk" unique_id=2035542616]
+texture = ExtResource("2_e0an3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sidewalk" unique_id=1243556308]
+position = Vector2(-16.25, 0)
+shape = SubResource("RectangleShape2D_xrivr")

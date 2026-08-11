@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bvkgv0t702dof"]
+
+[ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="1_dnlqt"]
+[ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://character_move.gd" id="1_kb8hb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(39, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dnlqt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player_car" type="Node2D" unique_id=1834288172]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
+script = ExtResource("1_kb8hb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=897770201]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=25848182]
+sprite_frames = SubResource("SpriteFrames_xrivr")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1282715799]
+zoom = Vector2(3, 3)
