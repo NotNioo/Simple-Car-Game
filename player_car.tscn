@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="1_dnlqt"]
 [ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://character_move.gd" id="1_kb8hb"]
+[ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_in3s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(39, 64)
@@ -31,3 +32,7 @@ sprite_frames = SubResource("SpriteFrames_xrivr")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1282715799]
 zoom = Vector2(3, 3)
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="player" unique_id=1011610233]
+stream = ExtResource("3_in3s4")
+parameters/looping = true
