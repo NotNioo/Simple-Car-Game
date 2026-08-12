@@ -4,12 +4,14 @@ var speed := 0.0
 
 @export var max_speed := 300.0
 @export var acceleration := 250.0
-@export var drag := 2.0
-@export var braking := 180.0
+@export var drag := 1.0
+@export var stop_threshold := 15.0
+@export var braking := 220.0
 
 @onready var engine_sound = $EngineSound
 @onready var game_over = $"../../../GameOver"
 @onready var camera = $"../Camera2D"
+@onready var speed_label = $"../CanvasLayer/SpeedLabel"
 
 
 func _ready() -> void:
@@ -25,41 +27,32 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("up"):
 		if speed < 0:
-			# Rem saat sedang mundur
+			# Brake when reversing
 			speed = move_toward(speed, 0.0, braking * delta)
 		else:
-			# Akselerasi maju
+			# Front Acceleration
 			speed = move_toward(speed, max_speed, acceleration * delta)
-
-		# Steering maju
-		if Input.is_action_pressed("left"):
-			rotation -= rotation_dt
-
-		if Input.is_action_pressed("right"):
-			rotation += rotation_dt
 
 	elif Input.is_action_pressed("down"):
 		if speed > 0:
-			# Rem saat sedang maju
+			# Brake when accelerating
 			speed = move_toward(speed, 0.0, braking * delta)
 		else:
-			# Akselerasi mundur
+			# Back Acceleration
 			speed = move_toward(speed, -max_speed, acceleration * delta)
 
-		# Steering mundur terbalik
-		if Input.is_action_pressed("left"):
-			rotation += rotation_dt
-
-		if Input.is_action_pressed("right"):
-			rotation -= rotation_dt
-
 	else:
-		# Lepas gas -> mobil tetap meluncur
+		# Release gas -> car keep sliding
 		speed *= exp(-drag * delta)
 
-		if abs(speed) < 1.0:
+		if abs(speed) < stop_threshold:
 			speed = 0.0
+	
+	if Input.is_action_pressed("left") && speed != 0.0:
+		rotation -= rotation_dt
 
+	if Input.is_action_pressed("right") && speed != 0.0:
+		rotation += rotation_dt
 	# =========================
 	# MOVEMENT
 	# =========================
@@ -91,7 +84,7 @@ func _physics_process(delta):
 	)
 
 	engine_sound.pitch_scale = clamp(speed_ratio, 0.8, 1.5)
-
+	speed_label.text = "Speed: %.2f" % speed
 
 func on_car_collided(collision):
 	var object = collision.get_collider()
@@ -99,13 +92,13 @@ func on_car_collided(collision):
 	if object.is_in_group("map"):
 		var collision_normal = collision.get_normal()
 
-		# Arah depan mobil
+		# Car front side
 		var forward = -transform.y
 
-		# Arah dari mobil menuju benda yang ditabrak
+		# Direction from the car to the collided object
 		var hit_direction = -collision_normal
 
-		# Seberapa dekat benturan dengan arah depan mobil
+		# How close collision with car front side
 		var front_hit = forward.dot(hit_direction)
 
 		if front_hit > 0.9:
