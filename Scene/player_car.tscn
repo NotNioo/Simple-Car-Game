@@ -40,3 +40,14 @@ sprite_frames = SubResource("SpriteFrames_xrivr")
 [node name="EngineSound" type="AudioStreamPlayer2D" parent="player" unique_id=1011610233]
 stream = ExtResource("3_hk22l")
 parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=740840157]
+
+[node name="SpeedLabel" type="Label" parent="CanvasLayer" unique_id=77335229]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 22
