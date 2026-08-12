@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://b7gfb3x371jlx"]
 
-[ext_resource type="PackedScene" uid="uid://cmo57wa18r2fi" path="res://Scene/main_map.tscn" id="1_sblpm"]
-[ext_resource type="PackedScene" uid="uid://bvkgv0t702dof" path="res://Scene/player_car.tscn" id="2_r34rm"]
+[ext_resource type="PackedScene" uid="uid://co2ac4b4eiu1g" path="res://Scene/main_road.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvkgv0t702dof" path="res://Scene/player_car.tscn" id="2_h2yge"]
 
-[node name="Main" type="Node2D" unique_id=2101027347]
+[node name="Main" type="Node2D" unique_id=942536970]
 
-[node name="MainMap" parent="." unique_id=456719401 instance=ExtResource("1_sblpm")]
+[node name="map" parent="." unique_id=824638865 instance=ExtResource("1_0xm2m")]
 
-[node name="Player_car" parent="MainMap" unique_id=1834288172 instance=ExtResource("2_r34rm")]
-position = Vector2(97, 187)
+[node name="Player_car" parent="map" unique_id=1834288172 instance=ExtResource("2_h2yge")]

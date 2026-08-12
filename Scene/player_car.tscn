@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_hk22l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(39, 64)
+size = Vector2(16, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
 animations = [{
@@ -24,7 +24,7 @@ animations = [{
 script = ExtResource("1_fta22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=897770201]
-position = Vector2(-0.5, -1)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=25848182]

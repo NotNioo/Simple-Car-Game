@@ -9,12 +9,12 @@ size = Vector2(32.5, 65)
 
 [node name="sidewalk" type="Node2D" unique_id=1210498739]
 
-[node name="sidewalk" type="StaticBody2D" parent="." unique_id=304712497]
+[node name="sidewalk" type="StaticBody2D" parent="." unique_id=304712497 groups=["map"]]
 physics_material_override = SubResource("PhysicsMaterial_xrivr")
 
-[node name="Sprite2D" type="Sprite2D" parent="sidewalk" unique_id=2035542616]
+[node name="Sprite2D" type="Sprite2D" parent="sidewalk" unique_id=2035542616 groups=["map"]]
 texture = ExtResource("2_e0an3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sidewalk" unique_id=1243556308]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sidewalk" unique_id=1243556308 groups=["map"]]
 position = Vector2(-16.25, 0)
 shape = SubResource("RectangleShape2D_xrivr")
