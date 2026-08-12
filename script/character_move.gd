@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var speed = 200.0
-var rotation_speed = 2.0
 
 @onready var engine_sound = $EngineSound
 @onready var game_over = $"../../../GameOver"
@@ -13,31 +12,26 @@ func _ready() -> void:
 func _physics_process(delta):
 
 	var direction := Vector2.ZERO
+	var rotation_dt: float = camera.rotation_speed * delta
 
 	if Input.is_action_pressed("up"):
 		direction = Vector2.UP.rotated(rotation)
 
 		if Input.is_action_pressed("left"):
-			rotation -= rotation_speed * delta
+			rotation -= rotation_dt
 
 		if Input.is_action_pressed("right"):
-			rotation += rotation_speed * delta
+			rotation += rotation_dt
 
 	elif Input.is_action_pressed("down"):
 		direction = Vector2.DOWN.rotated(rotation)
 
 		if Input.is_action_pressed("left"):
-			rotation += rotation_speed * delta
+			rotation += rotation_dt
 
 		if Input.is_action_pressed("right"):
-			rotation -= rotation_speed * delta
+			rotation -= rotation_dt
 	
-	camera.position = position
-	camera.rotation = lerp_angle(
-		camera.rotation,
-		rotation,
-		rotation_speed * delta
-	)
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 	else:
