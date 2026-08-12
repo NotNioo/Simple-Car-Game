@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bvkgv0t702dof"]
 
-[ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="1_dnlqt"]
-[ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://character_move.gd" id="1_kb8hb"]
-[ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_in3s4"]
+[ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://script/character_move.gd" id="1_fta22"]
+[ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="2_6ig0s"]
+[ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_hk22l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(39, 64)
@@ -11,7 +11,7 @@ size = Vector2(39, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dnlqt")
+"texture": ExtResource("2_6ig0s")
 }],
 "loop": 1,
 "name": &"default",
@@ -21,7 +21,7 @@ animations = [{
 [node name="Player_car" type="Node2D" unique_id=1834288172]
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
-script = ExtResource("1_kb8hb")
+script = ExtResource("1_fta22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=897770201]
 position = Vector2(-0.5, -1)
@@ -34,5 +34,5 @@ sprite_frames = SubResource("SpriteFrames_xrivr")
 zoom = Vector2(3, 3)
 
 [node name="EngineSound" type="AudioStreamPlayer2D" parent="player" unique_id=1011610233]
-stream = ExtResource("3_in3s4")
+stream = ExtResource("3_hk22l")
 parameters/looping = true
