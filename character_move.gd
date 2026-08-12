@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 200.0
-var rotation_speed = 3.0
+var rotation_speed = 2.0
 
 @onready var engine_sound = $EngineSound
 
@@ -10,7 +10,7 @@ signal collided(collission)
 func _ready() -> void:
 	collided.connect(_on_car_collided)
 	engine_sound.play()
-			
+	
 func _physics_process(delta):
 
 	# Up / Down = maju / mundur sesuai arah karakter
@@ -57,4 +57,15 @@ func _physics_process(delta):
 func _on_car_collided(collision):
 	var object = collision.get_collider()
 	if object.is_in_group("map"):
-		print("Collided!")
+		var collision_normal = collision.get_normal()
+		# Arah depan mobil
+		var forward = -transform.y
+
+		# Arah dari mobil menuju benda yang ditabrak
+		var hit_direction = -collision_normal
+
+		# Seberapa dekat benturan dengan arah depan mobil
+		var front_hit = forward.dot(hit_direction)
+		if front_hit > 0.9:
+			get_tree().paused = true
+			$"../../../GameOver".show_game_over()
