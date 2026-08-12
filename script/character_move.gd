@@ -4,6 +4,7 @@ var speed = 200.0
 var rotation_speed = 2.0
 
 @onready var engine_sound = $EngineSound
+@onready var game_over = $"../../../GameOver"
 
 signal collided(collission)
 
@@ -68,4 +69,4 @@ func _on_car_collided(collision):
 		var front_hit = forward.dot(hit_direction)
 		if front_hit > 0.9:
 			get_tree().paused = true
-			$"../../../GameOver".show_game_over()
+			game_over.show_game_over()
