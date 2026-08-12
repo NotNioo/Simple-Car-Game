@@ -25,6 +25,7 @@ animations = [{
 ignore_rotation = false
 zoom = Vector2(3, 3)
 script = ExtResource("1_6ig0s")
+position_speed = 9.0
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
 script = ExtResource("1_fta22")
