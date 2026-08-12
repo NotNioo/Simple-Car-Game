@@ -20,6 +20,10 @@ animations = [{
 
 [node name="Player_car" type="Node2D" unique_id=1834288172]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1282715799]
+ignore_rotation = false
+zoom = Vector2(3, 3)
+
 [node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
 script = ExtResource("1_fta22")
 
@@ -29,9 +33,6 @@ shape = SubResource("RectangleShape2D_13qdw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=25848182]
 sprite_frames = SubResource("SpriteFrames_xrivr")
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1282715799]
-zoom = Vector2(3, 3)
 
 [node name="EngineSound" type="AudioStreamPlayer2D" parent="player" unique_id=1011610233]
 stream = ExtResource("3_hk22l")
