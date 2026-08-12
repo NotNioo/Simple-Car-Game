@@ -28,6 +28,7 @@ script = ExtResource("1_6ig0s")
 position_speed = 9.0
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
+rotation = 1.5707964
 script = ExtResource("1_fta22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=897770201]
