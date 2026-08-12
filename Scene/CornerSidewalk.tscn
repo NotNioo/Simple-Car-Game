@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cus48x1qrgkpp"]
+
+[ext_resource type="Texture2D" uid="uid://b1ofthh1glmj1" path="res://Tiles/CornerSidewalk.png" id="1_ac3ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(34, 37)
+
+[node name="CornerSidewalk" type="Node2D" unique_id=1053294875]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1935756381]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=33455356]
+texture = ExtResource("1_ac3ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2126381396]
+position = Vector2(-16, -13.5)
+shape = SubResource("RectangleShape2D_13qdw")
