@@ -5,7 +5,7 @@ extends Camera2D
 @export var zoom_speed := 2.0
 @export var zoom_wheel_speed := 0.25
 
-@onready var player := $"../player"
+@onready var car := $"../car"
 
 func _ready() -> void:
 	zoom = Vector2(2.0, 2.0)
@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 	var rotation_dt := rotation_speed * delta
 	var position_dt := position_speed * delta
 	
-	# The camera approaches the player position smoothly
-	position = position.lerp(player.position, position_dt)
-	# The camera rotation approaches the player rotation
+	# The camera approaches the car position smoothly
+	position = position.lerp(car.position, position_dt)
+	# The camera rotation approaches the car rotation
 	rotation = lerp_angle(
 		rotation,
-		player.rotation,
+		car.rotation,
 		rotation_dt
 	)
 

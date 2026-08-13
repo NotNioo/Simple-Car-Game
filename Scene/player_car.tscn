@@ -4,11 +4,6 @@
 [ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://script/character_move.gd" id="1_fta22"]
 [ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="2_6ig0s"]
 [ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_hk22l"]
-[ext_resource type="AudioStream" uid="uid://c4l58f81lco12" path="res://Sound/adrenaline.wav" id="3_kim8e"]
-[ext_resource type="Script" uid="uid://tmcjx3bg2quw" path="res://Scene/background_sound.gd" id="5_hk22l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(16, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
 animations = [{
@@ -21,33 +16,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(16, 64)
+
 [node name="Player_car" type="Node2D" unique_id=1834288172]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1282715799]
 ignore_rotation = false
 zoom = Vector2(3, 3)
 script = ExtResource("1_6ig0s")
-
-[node name="player" type="CharacterBody2D" parent="." unique_id=1108046269]
-rotation = 1.5707964
-script = ExtResource("1_fta22")
-
-[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="player" unique_id=187887695]
-rotation = -1.5707964
-stream = ExtResource("3_kim8e")
-autoplay = true
-script = ExtResource("5_hk22l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=897770201]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_13qdw")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=25848182]
-sprite_frames = SubResource("SpriteFrames_xrivr")
-
-[node name="EngineSound" type="AudioStreamPlayer2D" parent="player" unique_id=1011610233]
-stream = ExtResource("3_hk22l")
-parameters/looping = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=740840157]
 
@@ -60,4 +37,18 @@ offset_bottom = 41.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 22
 
-[connection signal="finished" from="player/BackgroundSound" to="player/BackgroundSound" method="_on_finished"]
+[node name="car" type="CharacterBody2D" parent="." unique_id=985563380]
+script = ExtResource("1_fta22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="car" unique_id=25848182]
+sprite_frames = SubResource("SpriteFrames_xrivr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car" unique_id=897770201]
+position = Vector2(0.99999994, 1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="EngineSound" type="AudioStreamPlayer2D" parent="car" unique_id=1011610233]
+rotation = 1.5707964
+stream = ExtResource("3_hk22l")
+parameters/looping = true
