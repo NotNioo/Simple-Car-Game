@@ -17,5 +17,4 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapBoundary" unique_id=614590939]
 polygon = PackedVector2Array(-709, 768, -703, -965, 3216, -965, 3180.7976, -702.6734, 4493, -731, 4500, -370, 7869, -420, 7876, -719, 14013, -716, 14013, -1285, 14341, -1278, 14332, -1351, 17230, -1354, 17229, 1118, 17219, 2960, 14336, 2944, 14340, 2131, 14014, 2118, 14032, 1093, 9563, 1072, 9556, 1436, 4620, 1415, 2949, 1392, 2949, 1151, 1277, 1182, 1277, 772)
 
-[connection signal="area_exited" from="MapBoundary" to="GameOver" method="_on_map_boundary_area_exited"]
 [connection signal="body_exited" from="MapBoundary" to="GameOver" method="_on_map_boundary_body_exited"]

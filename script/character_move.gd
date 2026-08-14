@@ -18,7 +18,7 @@ var falling := false
 var fall_velocity := Vector2.ZERO
 
 @export var fall_duration := 0.8
-@export var fall_deceleration := 150.0
+@export var fall_deceleration := 500.0
 
 
 func _ready() -> void:
