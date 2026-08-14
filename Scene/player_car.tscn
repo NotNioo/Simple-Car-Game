@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2rl2tqg5eabv" path="res://script/camera.gd" id="1_6ig0s"]
 [ext_resource type="Script" uid="uid://boae4cgkklgf2" path="res://script/character_move.gd" id="1_fta22"]
-[ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Sprite1.png" id="2_6ig0s"]
+[ext_resource type="Texture2D" uid="uid://dsdqp5kjck1rs" path="res://Sprite/Vehicle/Sprite1.png" id="2_6ig0s"]
 [ext_resource type="AudioStream" uid="uid://cfdi3rapc01mq" path="res://Sound/EngineIdle.mp3" id="3_hk22l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]

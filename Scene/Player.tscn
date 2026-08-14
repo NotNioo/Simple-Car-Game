@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://5axxud2onv0g"]
+
+[ext_resource type="Texture2D" uid="uid://c4isompe6ggy6" path="res://Sprite/Player/PlayerIdleBack.png" id="1_3eeal"]
+[ext_resource type="Texture2D" uid="uid://du2uitmf5k0un" path="res://Sprite/Player/PlayerIdleFront.png" id="2_jvxg0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sihhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3eeal")
+}],
+"loop": 1,
+"name": &"IdleBack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jvxg0")
+}],
+"loop": 1,
+"name": &"IdleFront",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sihhw"]
+size = Vector2(15, 18.75)
+
+[node name="Player" type="Node2D" unique_id=1054598028]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=508013310]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=330140997]
+sprite_frames = SubResource("SpriteFrames_sihhw")
+animation = &"IdleFront"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=248602385]
+position = Vector2(-0.5, -1.375)
+shape = SubResource("RectangleShape2D_sihhw")

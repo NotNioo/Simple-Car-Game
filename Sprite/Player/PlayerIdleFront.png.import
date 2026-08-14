@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbjiplqabhkyk"
-path="res://.godot/imported/Bus1.png-bc7ccea7add2011fc85b392ad0f8b94e.ctex"
+uid="uid://du2uitmf5k0un"
+path="res://.godot/imported/PlayerIdleFront.png-76e71a8d1cf9c2764adcbdd5cfb4af54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Bus1.png"
-dest_files=["res://.godot/imported/Bus1.png-bc7ccea7add2011fc85b392ad0f8b94e.ctex"]
+source_file="res://Sprite/Player/PlayerIdleFront.png"
+dest_files=["res://.godot/imported/PlayerIdleFront.png-76e71a8d1cf9c2764adcbdd5cfb4af54.ctex"]
 
 [params]
 
