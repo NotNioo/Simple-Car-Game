@@ -11,6 +11,7 @@
 [node name="NewMap" parent="." unique_id=1643606774 instance=ExtResource("2_r34rm")]
 
 [node name="Player_car" parent="NewMap" unique_id=1834288172 instance=ExtResource("2_h2yge")]
+scale = Vector2(1.5, 1.5)
 
 [node name="MapBoundary" type="Area2D" parent="." unique_id=998504967]
 

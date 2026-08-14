@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://5axxud2onv0g"]
 
 [ext_resource type="Texture2D" uid="uid://c4isompe6ggy6" path="res://Sprite/Player/PlayerIdleBack.png" id="1_3eeal"]
+[ext_resource type="Script" uid="uid://o3ls4cw18lr1" path="res://script/player_move.gd" id="1_jvxg0"]
 [ext_resource type="Texture2D" uid="uid://du2uitmf5k0un" path="res://Sprite/Player/PlayerIdleFront.png" id="2_jvxg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sihhw"]
+radius = 15.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sihhw"]
 animations = [{
@@ -28,6 +32,12 @@ size = Vector2(15, 18.75)
 [node name="Player" type="Node2D" unique_id=1054598028]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=508013310]
+script = ExtResource("1_jvxg0")
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=1389066222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=1324899007]
+shape = SubResource("CircleShape2D_sihhw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=330140997]
 sprite_frames = SubResource("SpriteFrames_sihhw")
@@ -36,3 +46,5 @@ animation = &"IdleFront"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=248602385]
 position = Vector2(-0.5, -1.375)
 shape = SubResource("RectangleShape2D_sihhw")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1290377970]
