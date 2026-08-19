@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cjx4ecwvxal66"]
+
+[node name="Control" type="Control" unique_id=1403992284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = -4.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1285856607]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=542901339]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 99.0
+offset_right = 621.0
+offset_bottom = 148.0
+text = "CAR GAME
+"
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=29323998]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 308.0
+offset_right = 596.0
+offset_bottom = 339.0
+text = "Play"
+icon_alignment = 1
+
+[node name="MenuButton2" type="MenuButton" parent="." unique_id=1193011872]
+layout_mode = 0
+offset_left = 546.0
+offset_top = 348.0
+offset_right = 608.0
+offset_bottom = 379.0
+text = "Option"

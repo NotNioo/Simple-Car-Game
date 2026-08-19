@@ -8,10 +8,8 @@ func _ready() -> void:
 	print(global_position)
 	
 func _physics_process(_delta: float) -> void:
-	# 2. Fixed order: Left (Negative X), Right (Positive X), Up (Negative Y), Down (Positive Y)
 	var direction := Input.get_vector("left", "right", "up", "down")
 	
-	# 3. Fixed Vector2.ZERO capitalization
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		if direction.y > 0:
@@ -22,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 			animated_sprite.play()
 		elif direction.x < 0: #kiri
 			animated_sprite.play()
+		last_direction = direction
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
 		if abs(last_direction.x) > abs(last_direction.y):
