@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ysnc5tlukgy3"
-path="res://.godot/imported/Sprite4.png-e87a4129570a32680926a8cb6eae19c3.ctex"
+uid="uid://vwdcb5caugpq"
+path="res://.godot/imported/T-34-85Body.png-6392ec6f2545fdd3be56dce60000b829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Vehicle/Sprite4.png"
-dest_files=["res://.godot/imported/Sprite4.png-e87a4129570a32680926a8cb6eae19c3.ctex"]
+source_file="res://Sprite/Vehicle/Tank/T-34-85/T-34-85Body.png"
+dest_files=["res://.godot/imported/T-34-85Body.png-6392ec6f2545fdd3be56dce60000b829.ctex"]
 
 [params]
 
